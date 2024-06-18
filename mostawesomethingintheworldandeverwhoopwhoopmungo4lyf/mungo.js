@@ -81,7 +81,7 @@
 lb = document.getElementById("load");
 
 
-sb.onclick = () => {sc = makeSaveCode(); alert(`the following code has been copied to your clipboard. please keep it somewhere safe, you will use it to load your game later: \n ${sc} \n you can also find it in the console (f12 or ctrl+shift+c)`);navigator.clipboard.writeText(sc);}
+sb.onclick = () => {sc = makeSaveCode(); alert(`the following code has been copied to your clipboard. please keep it somewhere safe, you will use it to load your game later: \n ${sc} \n you can also find it in the console (f12 or ctrl+shift+c)`);navigator.clipboard.writeText(sc);console.log(sc)}
 lb.onclick = () => {sc = prompt("please enter the save code to load."); if (sc != null){loadSave(sc);}};
 
 function youKnowWhat(){
@@ -174,14 +174,14 @@ function FE(k){
   
   function yeah(){
     boats = btoa(mungos);
-    console.log(youKnowWhat());
+    //console.log(youKnowWhat());
     return youKnowWhat();
   }
     
     
   function loadSave(save){
     save = FE(save);
-    console.log(save);
+    //console.log(save);
     mungos = parseInt(atob(save["a"][1]));
     mungapples = parseInt(save["a"][2]);
     minimungomungos = parseInt((save["a"][3]));
@@ -266,7 +266,7 @@ function FE(k){
   document.addEventListener('keydown', (event) => {
       if (requiredKeys.includes(event.key)) {
           pressedKeys.add(event.key);
-          console.log(pressedKeys)
+          //console.log(pressedKeys)
       }
       if (requiredKeys.every(key => pressedKeys.has(key))) {
           onMugo();
@@ -633,7 +633,7 @@ function FE(k){
     localStorage.setItem('save',sc);
   }
 
-  setInterval(makeLocalSave, 7000)
+  setInterval(makeLocalSave, 1000)
 
   setInterval(minimungoTick, 700);
   setInterval(biggieMungoTick, 350);
@@ -660,9 +660,9 @@ function FE(k){
   nU.onclick = () => {if (mungos >= nP && noahs == 1){mungos -= nP;noahs += 1;nU.parentElement.classList.add("bought");nU.textContent = "BOUGHT!"; nU.onclick = () => {}}}
   QU.onclick = () => {if (mungos >= QFP && QF == 0){mungos -= QFP;QF += 1;QU.parentElement.classList.add("bought");QU.textContent = "BOUGHT!";;QU.onclick = () => {}}}
   
-  window.onbeforeunload = function() {
+ /* window.onbeforeunload = function() {
           return confirm("Mungo Clicker has limited saving capabilities. if you close this tab, you lose all progress, unless you make a manual save. continue?");           
-      }      
+      }      */
     
 }());
 
