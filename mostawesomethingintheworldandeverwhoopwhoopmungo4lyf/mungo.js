@@ -1,12 +1,9 @@
 ;(function(){
   up = 0
+  ohBabes = CryptoJS.AES.encrypt("now that's mungoTastic", "what the mungo?!");
   alert("mungo clicker is testing new features right now, please report any issues to me please thanks")
   k = true
   while (k == true){if (prompt("i am literally working on the game right now so like give me 10 minutes") == "dev"){k = false}}
-  if (localStorage.getItem("save")) {
-    loadSave(localStorage.getItem("save"))
-
-  }
   inved = false
   
   bank = document.getElementById("bank");
@@ -151,7 +148,7 @@ function FE(k){
       update();
   }
   
-  ohBabes = CryptoJS.AES.encrypt("now that's mungoTastic", "what the mungo?!");
+
   
   function DerKey(kay) {return CryptoJS.AES.decrypt(kay, "what the mungo?!").toString()}
   
@@ -307,6 +304,11 @@ function FE(k){
   }
   
   
+  if (localStorage.getItem("save")) {
+    loadSave(localStorage.getItem("save"))
+
+  }
+
   function clickMungo(event = null, upVal = parseInt(mungoTiplier)){
     mungos += upVal;
     update();
