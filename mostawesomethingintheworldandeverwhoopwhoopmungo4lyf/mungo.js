@@ -3,7 +3,10 @@
   alert("mungo clicker is testing new features right now, please report any issues to me please thanks")
   k = true
   while (k == true){if (prompt("i am literally working on the game right now so like give me 10 minutes") == "dev"){k = false}}
-  
+  if (localStorage.getItem("save")) {
+    loadSave(localStorage.getItem("save"))
+
+  }
   inved = false
   
   bank = document.getElementById("bank");
@@ -622,6 +625,14 @@ function FE(k){
     update();
   }}
   
+
+  function makeLocalSave(){
+    sc = makeSaveCode()
+    localStorage.setItem('save',sc);
+  }
+
+  setInterval(makeLocalSave, 7000)
+
   setInterval(minimungoTick, 700);
   setInterval(biggieMungoTick, 350);
   setInterval(mungApplerTick, 1500);
