@@ -1,0 +1,31 @@
+m = parseInt(atob(boats)) ** (1/2)
+  ohmagah = [mungapples, minimungos, biggiemungos]
+o = {"a":{
+  "1":btoa(m**2),
+  "2":ohmagah[0],
+  "3":mungos,
+  "4":ohmagah[1],
+  "5":ohmagah[2],
+  "6":mungapplers,
+  "7":"what the sigma",
+  "8":minimungomungos,
+  "9":biggiemungomungos}
+  p:{
+  "1":btoa(m**2),
+  "2":mungapplePrice,
+  "3":mungos,
+  "4":minimungoPrice,
+  "5":biggiemungoPrice,
+  "6":mungapplerPrice,
+  "7":"what the sigma",
+  "8":minimungomungoPrice,
+  "9":biggiemungomungoPrice
+  }
+  }
+  
+  when adding something new:
+  - add to save
+  - add to load
+  - add to update func
+  - get function
+  - tick

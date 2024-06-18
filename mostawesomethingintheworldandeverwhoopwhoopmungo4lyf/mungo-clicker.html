@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+<link rel="shortcut icon" type="image/png" href="../images/wbs.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MUNGO CLICKER</title>
+<link href="experimental.css" rel="stylesheet" type="text/css" media="all">
+<link href="../style.css" rel="stylesheet" type="text/css" media="all">
+<script src="mungo.js" defer></script>
+<script src="../scripts/date.js" defer></script>
+<script src="../sve.js" defer></script>
+<script src="../mungoClickerSaveCode.js" defer></script>
+</head>
+<body>
+<img id="hell" src="The_Hell.webp" style="height:0px;">
+<header>
+  <h1 class="title header1"><img id="logo" src="/images/logo.png"></h1>
+</header>
+<div class="topnav">
+<a href="../index.html">Home</a>
+<a href="../articles.html">Articles</a>
+<a href="../about.html">About</a>
+<a href="../people.html">People</a>
+<a href="../mungo_corner.html">Mungo Corner</a>
+<a href="../games.html">Games</a>
+<a id="date" href="https://www.google.com/search?q=how+to+cope+with+being+stupid">DD/MM/YYYY</a>
+</div>
+<h1>mungo clicker</h1>
+<button id="save">save</button>
+<button id="load">load</button>
+<div id="game">
+<img id="mungo" src="MungoMungo!!!!.jpg">
+<div id="floatingNumberContainer"></div>
+<div id="mungs">
+<h2>MUNGOS: <div id="bank">0</div></h2>
+<h2 id="MPS">MPS: <div id="mps">0</div></h2>
+</div>
+</div>
+<hr>
+<h2>SHOP</h2>
+<div id="shop">
+  <div id = "box1" class = "item">
+    <h3>mungapples - increase click value</h3>
+      <button id="mungapple">$10</button>
+      <h3 class = "amount" id="mungapples">you have none</h3>
+      <hr></div>
+      
+  <div id = "box2" class = "item">
+    <h3>minimungos - clicks for you </h3>
+    <button id="minimungo">$50</button>
+    <h3 id="minimungos" class = "amount">you have none</h3>
+    <hr>
+  </div>
+      
+  <div id = "box3" class = "item">
+    <h3>biggiemungos - clicks for you twice as fast </h3>
+    <button id="biggiemungo">$96</button>
+    <h3 id="biggiemungos" class = "amount">you have none</h3>
+    <hr>
+  </div>
+      
+  <div id = "box4" class = "item">
+    <h3>mungapplers - increase mungapples</h3>
+    <button id="mungappler">$1000</button>
+    <h3 class = "amount" id="mungapplers">you have none</h3>
+    <hr>
+  </div>
+      
+  <div id = "box5" class = "item">
+    <h3>minimungomungos - buds off minimungos</h3>
+    <button id="minimungomungo">$20000</button>
+    <h3 class = "amount" id="minimungomungos">you have none</h3>
+    <hr>
+  </div>
+      
+  <div id = "box6" class = "item">
+    <h3>biggiemungomungos - spawns swarthes of biggiemungoes every 9 seconds</h3>
+    <button id="biggiemungomungo">$39000</button>
+    <h3 class = "amount" id="biggiemungomungos">you have none</h3>
+    <hr>
+  </div>
+      
+  <div id = "box7" class = "item">
+    <h3>mungofarm - ethically grow mungos</h3>
+    <button id="mungofarm">$2000000000</button>
+    <h3 class = "amount" id="farms">you have none</h3>
+    <hr>
+  </div>
+      
+  <div id = "box8" class = "item">
+    <h3>mungomine - hammer mungos from deep underground - you will occasionally find a super rare mungodiamond!</h3>
+    <button id="mine">$200000000000</button>
+    <h3 class = "amount" id="mines">you have none</h3><h3 id = "goldMungos" class = "amount">you have found 0 mungodiamonds, totalling to $0</h3>
+    <hr>
+  </div>
+      
+  <div id="box9" class = "upgrade">
+    <h3>(upgrade) - noah's shrooms - double output for everything</h3>
+    <button id="noah">$2000000000000000</button>
+    <hr>
+  </div>
+    
+  <div id = "box10" class = "item">
+    <h3>mungpark - mungo-themed theme park</h3>
+    <button id="park">$15800000000000</button>
+    <h3 class = "amount" id="parks">you have none</h3>
+    <hr>
+  </div>
+    
+  <div id="box11" class="item">
+    <h3>quantummungos - generate mungos in parallel universes - prone to errors</h3>
+    <button id="quantummungo">$315140000000000</button>
+    <h3 class="amount" id="quants">you have none</h3>
+    <hr>
+  </div>
+  
+  <div id="box12" class = "upgrade">
+    <h3>(upgrade) - quantum fixer - stop quantum errors</h3>
+    <button id="QF">$100000000000000000</button>
+    <hr>
+  </div>
+  
+  <div id="box13" class="item">
+    <h3>mungod - generate ten of everything before this each second per mungod. and a lot of mungos</h3>
+    <button id="god">$5830000000000000000</button>
+    <h3 class="amount" id="gods">you have none</h3>
+    <hr>
+  </div>
+  
+  <div  class = "end item"><h3 id="finale">keep buying things to unlock more items!</h3><hr></div>
+</div>
+</body>
+</html>

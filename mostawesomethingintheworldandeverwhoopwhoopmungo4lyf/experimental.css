@@ -1,0 +1,507 @@
+
+body {
+/*filter:invert(0);*/
+background-color: #FFF9C4;
+user-select: none;
+font-family: Segoe UI;
+}
+
+.inverted{
+  filter:invert(1);
+  background-image: url(/mostawesomethingintheworldandeverwhoopwhoopmungo4lyf/The_Hell.webp);
+  }
+
+#save, #load {
+    padding: 10px 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    background-color: #4CAF50;
+    color: white;
+    transition: background-color 0.3s;
+}
+#mungo {
+    right: 0px;
+    position: fixed;
+    width: 20%;
+    filter:invert(0);
+}
+
+#mungs {
+    right: 0px;
+    position: fixed;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    max-width:45%;
+    top: 78%;
+}
+
+#mungs h2 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #333;
+    align-items: center;
+}
+
+#bank, #mps {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 10px;
+    color: #d9534f;
+}
+
+#mungo:hover {
+    animation: angry;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    transform: rotateZ(360deg);
+    transition: all 1s;
+}
+
+#mungo:active {
+    animation: pulse;
+    animation-iteration-count: infinite;
+    animation-duration: .5s;
+}
+
+#mungo.active {
+    animation: pulse;
+    animation-iteration-count: infinite;
+    animation-duration: .4s;
+}
+
+@keyframes angry {
+    0% { transform: rotateZ(-360deg); }
+    100% { transform: rotateZ(360deg); }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+        transform: rotateZ(-20deg);
+    }
+    70% {
+        transform: scale(2);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        transform: rotateZ(20deg);
+    }
+}
+@media (min-width: 768px) {
+#save:hover, #load:hover {
+    background-color: #45a049;
+}
+
+#mungs {
+    padding: 10px;
+    right: 20px;
+    min-width: 17%;
+    max-width: 48%;
+    position: fixed;
+    background-color: #f0f0f0;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    top: 85%;
+}
+
+#save {
+    order: 1;
+}
+
+#load {
+    order: 2;
+}
+
+.upgrade {
+    font-size: 20px;
+    display: none;
+    background-color: #ffeb3b;
+    border: 2px solid #ff9800;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(255, 152, 0, 0.5);
+    animation: uppulse 1.5s infinite;
+}
+
+.upgrade.bought {
+    background-color: #d3d3d3;
+    border: 2px solid #a9a9a9;
+    box-shadow: none;
+    animation: none;
+    cursor: default;
+}
+
+.upgrade.bought h3 {
+    color: #696969;
+}
+
+.upgrade.bought button {
+    background-color: #a9a9a9;
+    color: #696969;
+    cursor: not-allowed;
+    transform: none;
+    transition: none;
+}
+
+.upgrade.bought button:hover,
+.upgrade.bought button:active,
+.upgrade.bought button:focus {
+    background-color: #a9a9a9;
+    color: #696969;
+    transform: none;
+    box-shadow: none;
+}
+
+.upgrade h3 {
+    color: #ff5722;
+}
+
+.upgrade button {
+    width: 100%;
+    font-size: 1.5em;
+    padding: 10px 20px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.upgrade button.disabled {
+    background-color: #ccc;
+    color: #777;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.upgrade button:hover {
+    background-color: #fb8c00;
+    transform: scale(1.05);
+}
+
+.upgrade button:active {
+    background-color: #ef6c00;
+    transform: scale(0.95);
+}
+
+.upgrade button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.5);
+}
+
+@keyframes uppulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+h2 {
+    font-size: 50px;
+}
+
+.title {
+    text-align: center;
+}
+
+.item {
+    font-size: 23px;
+    display: none;
+}
+
+#game {
+    background-color: #FFECF8;
+}
+
+.end {
+    font-size: 30px;
+    display: block;
+}
+
+.item button {
+    width: 100%;
+    font-size: 1.7em;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.item button.disabled {
+    background-color: #ccc;
+    color: #777;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.item button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.item button:active {
+    background-color: #3e8e41;
+    transform: scale(0.95);
+}
+
+.item button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.5);
+}
+
+.amount {
+    color: red;
+}
+
+#mungo {
+    cursor: pointer;
+}
+
+#shop {
+    width: 50%;
+}
+
+#logo {
+    height: 80px;
+}
+
+
+
+.header1 {
+    font-family: Segoe UI;
+    font-size: 3em;
+    color: black;
+    margin-top: 30px;
+}
+
+.header2 {
+    font-family: Segoe UI;
+    font-size: 1.5em;
+    color: black;
+}
+
+.border1 {
+    border: 2px solid blue;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: rgb(70, 150, 110);
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.5em;
+    min-width: 150px;
+    height: 32px;
+}
+
+#date {
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5em;
+    width: 150px;
+    height: 32px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+a {
+    font-family: Segoe UI;
+}
+
+p {
+    font-family: Segoe UI;
+    font-size: 1.5em;
+}
+
+.wrapper {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+h1 {
+    font-family: Segoe UI;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+#quote {
+    font-style: italic;
+    font-size: 3em;
+}
+
+#score, #result {
+    font-size: 40px;
+    color: red;
+}
+
+#start, #yes, #no {
+    width: 33%;
+    height: 100px;
+    border-radius: 10%;
+    background-color: black;
+    color: red;
+    font-size: 2em;
+}
+
+@keyframes floatUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0) rotateZ(-15deg);
+    }
+    50% {
+        transform: translateY(-50px) rotateZ(15deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100px) rotateZ(-15deg);
+    }
+}
+
+.floating-number {
+    user-select: none;
+    pointer-events: none;
+    font-weight: bold;
+    position: fixed;
+    top: calc(85% - 100px);
+    right: 50%;
+    transform: translateX(50%);
+    font-size: 60px;
+}
+}
+
+/* Styles for narrow screens (phones) */
+@media (max-width: 767px) {
+
+  #mungo {
+    width: 30%;
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+/* Adjust the image size */
+#mungo{
+    width: 100%;
+}
+#save, #load {
+    padding: 8px 15px;
+    font-size: 14px;
+    margin: 0 5px;
+    border-radius: 4px;
+}
+
+.upgrade {
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    display:none;
+}
+
+.upgrade button {
+    font-size: 1.5em;
+    padding: 8px 15px;
+}
+
+.title h2 {
+    font-size: 35px;
+}
+
+.item {
+    font-size: 20px;
+    display:none;
+}
+
+.item button {
+    font-size: 1.5em;
+    padding: 8px 15px;
+}
+
+.header1 {
+    font-size: 2em;
+}
+
+.header2 {
+    font-size: 1.2em;
+}
+
+.topnav a {
+    font-size: 1.2em;
+    min-width: 100px;
+    padding: 10px 12px;
+}
+
+#date {
+    font-size: 1.2em;
+    width: 100px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+#quote {
+    font-size: 2.5em;
+}
+
+#score, #result {
+    font-size: 30px;
+}
+
+#start, #yes, #no {
+    width: 100%;
+    height: 80px;
+    font-size: 1.5em;
+}
+
+.floating-number {
+    font-size: 40px;
+}
+
+#mungo {
+    width: 30%;
+}
+
+#mungs {
+    width: 80%;
+    right: 10%;
+    top: 65%;
+}
+
+#mungs h2 {
+    font-size: 2.5em;
+}
+
+#shop {
+    width: 80%;
+}
+}

@@ -1,0 +1,101 @@
+
+.title{
+text-align: center;
+}
+body{
+font-family: Segoe UI; 
+}
+
+#logo{
+  height:80px;
+  }
+
+
+.header1{
+Font-family: Segoe UI;
+font-size: 3em;
+color: black;
+margin-top:30px;
+}
+
+.header2{
+Font-family: Segoe UI;
+font-size: 1.5em;
+color: black;
+
+
+}
+.border1{
+border: 2px solid blue;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: rgb(70, 150, 110);
+}
+
+/* Navbar links */
+.topnav a{
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size:1.5em;
+  min-width:150px;
+  height:32px;
+}
+
+#date{
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-size:1.5em;
+  width:150px;
+  height:32px;
+}
+
+/* Links - change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+a{
+font-family: Segoe UI;
+}
+p{
+font-family: Segoe UI;
+font-size: 1.5em;
+}
+div.wrapper{
+margin-left: 15%;
+margin-right: 15%;
+}
+
+h1{
+  font-family: Segoe UI; 
+  text-align: center; 
+  font-size:2.5em;
+  }
+  
+#quote{
+  font-style:italic;
+  font-size:3em;
+  }
+  
+#score, #result{
+  font-size:40px;
+  color:red;
+  }
+
+#start, #yes, #no{
+  width:33%;
+  height:100px;
+  border-radius:10%;
+  background-color:black;
+  color:red;
+  font-size:2em;
+  }
