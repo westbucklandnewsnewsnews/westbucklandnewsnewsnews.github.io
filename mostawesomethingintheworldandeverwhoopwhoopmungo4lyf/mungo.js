@@ -1,8 +1,8 @@
 ;(function(){
   up = 0
   alert("mungo clicker is testing new features right now, please report any issues to me please thanks")
-  k = true
-  while (k == false){if (prompt("i am literally working on the game right now so like give me 10 minutes") == "dev"){k = false}}
+  k = false
+  while (k == true){if (prompt("i am literally working on the game right now so like give me 10 minutes") == "dev"){k = false}}
   
   inved = false
   
