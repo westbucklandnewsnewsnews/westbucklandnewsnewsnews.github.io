@@ -633,7 +633,7 @@ function FE(k){
     localStorage.setItem('save',sc);
   }
 
-  setInterval(makeLocalSave, 1000)
+  setInterval(makeLocalSave, 750)
 
   setInterval(minimungoTick, 700);
   setInterval(biggieMungoTick, 350);
