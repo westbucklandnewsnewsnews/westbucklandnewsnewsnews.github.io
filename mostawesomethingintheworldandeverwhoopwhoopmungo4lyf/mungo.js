@@ -409,7 +409,7 @@ function FE(k){
     pMP =  parkPrice
     qMP = numberToWords(quantPrice)
     gMP = numberToWords(godP)
-    mUNP = numberToWords(mUNP)
+    MUNATIONSP = numberToWords(mUNP)
     
     if (mP>1000000){ mP=numberToWords(mP)}
     if (mrP>1000000){ mrP=numberToWords(mrP)}
@@ -469,7 +469,7 @@ function FE(k){
     document.getElementById("gods").textContent = `you have ${gods} mungods, making you ${gPS} mungos and ${10*gods} of each previous item every second`;
     if (godP > mungos){god.classList.add("disabled") }else {god.classList.remove("disabled") }
 
-    mUN.textContent = `$ ${mUNP}`;
+    mUN.textContent = `$ ${MUNATIONSP}`;
     document.getElementById("mUNs").textContent = `you have ${mUNs} model UNs, making you ${munPS} mungos and ${10*mUNs} of each previous item every second`;
     if (mUNP > mungos){mUN.classList.add("disabled") }else {mUN.classList.remove("disabled") }
     
