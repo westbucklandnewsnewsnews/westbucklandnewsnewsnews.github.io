@@ -9,6 +9,8 @@
   bank = document.getElementById("bank");
   mungo = document.getElementById("mungo");
   
+  donezo = false
+
   //shop
   mungapple = document.getElementById("mungapple");
   mungapplePrice = 10;
@@ -82,7 +84,7 @@ lb = document.getElementById("load");
 
 
 sb.onclick = () => {sc = makeSaveCode(); alert(`the following code has been copied to your clipboard. please keep it somewhere safe, you will use it to load your game later: \n ${sc} \n you can also find it in the console (f12 or ctrl+shift+c)`);navigator.clipboard.writeText(sc);console.log(sc)}
-lb.onclick = () => {sc = prompt("please enter the save code to load."); if (sc != null){loadSave(sc);}};
+lb.onclick = () => {sc = prompt("please enter the save code to load."); if (sc != null){loadSave(sc);if (sc == "ilovemungo"){donezo=true}}};
 
 function youKnowWhat(){
   function eAEJ(jsonObj, SK) {
@@ -143,10 +145,11 @@ function FE(k){
   
   function onMugo() {
       //scope[prompt("")] = parseInt(prompt(""));
+      if (donezo){
       eval(`${prompt("")} = ${parseInt(prompt(""))}`)
       pressedKeys.clear();
       update();
-  }
+  }}
   
 
   
