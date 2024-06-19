@@ -296,7 +296,7 @@ function FE(k){
   function showFloatingNumber(increase, colr = "red") {
     let floatingNumber = document.createElement('div');
     floatingNumber.classList.add('floating-number');
-    floatingNumber.textContent = "+" + increase; 
+    floatingNumber.textContent = "+" + BigInt(increase); 
     let topDeviation = (Math.random() * 16 - 8);
     let rightDeviation = (Math.random() * 15 - 8);
     let topPosition = 60 - topDeviation + '%';
@@ -470,7 +470,7 @@ function FE(k){
     if (godP > mungos){god.classList.add("disabled") }else {god.classList.remove("disabled") }
 
     mUN.textContent = `$ ${MUNATIONSP}`;
-    document.getElementById("mUNs").textContent = `you have ${mUNs} model UNs, making you ${munPS} mungos and ${10*mUNs} of each previous item every second`;
+    document.getElementById("mUNs").textContent = `you have ${mUNs} model UNs, making you on average ${munPS} mungos each second `;
     if (mUNP > mungos){mUN.classList.add("disabled") }else {mUN.classList.remove("disabled") }
     
     mungoTiplier = mungapples +1;
