@@ -72,6 +72,9 @@
   gods = 0;
   godP = 2830000000000000000;
   
+  mUN = document.getElementById("mUN")
+  mUNs = 0
+  mUNP = 90000000000000000000
   mungapple.parentElement.style.display = "block";
   
   const requiredKeys = ['m', 'u', 'g'];
@@ -98,7 +101,7 @@ function youKnowWhat(){
 if (14 > 7){
   m = parseInt(atob(boats)) ** (1/2);
   ohmagah = [mungapples, minimungos, biggiemungos];
-  o = {"ver":1.2,
+  o = {"ver":1.3,
     "a":{
       "1":btoa(m**2),
       "2":ohmagah[0],
@@ -116,7 +119,8 @@ if (14 > 7){
       "12":parks,
       "13":quants,
       "QF":QF,
-      "14":gods
+      "14":gods,
+      "15":mUNs
       
       },
     "p":{
@@ -133,7 +137,8 @@ if (14 > 7){
       "11":minePrice,
       "12":parkPrice,
       "13":quantPrice,
-      "14":godP
+      "14":godP,
+      "15":mUNP
     }
   };
   return eAEJ(o, ohBabes);
@@ -141,6 +146,7 @@ if (14 > 7){
 
 function FE(k){
   return dADJ(k, ohBabes);
+
   }
   
   function onMugo() {
@@ -224,7 +230,11 @@ function FE(k){
         gods = (save["a"][14]);
         godP = save["p"][14];
         }
-        
+      if (save["ver"] >= 1.3){
+        mUNs = save["a"][15]
+        mUNP = save["p"][15]
+
+      }
       }
     
     
@@ -349,10 +359,11 @@ function FE(k){
     if (farms > 0) {mine.parentElement.style.display = "block";}
     if (mines > 0) {noah.parentElement.style.display = "block";park.parentElement.style.display = "block";}
     if (parks > 0) {quant.parentElement.style.display = "block";QU.parentElement.style.display = "block";}
-    if (quants > 0){done=true;god.parentElement.style.display = "block";}
+    if (quants > 0){god.parentElement.style.display = "block";}
+    if (gods > 0){done=true;mUN.parentElement.style.display = "block"}
     
     if (done){
-      document.getElementById("finale").textContent = "that's all the upgrades we've made so far. we hope you've enjoyed!"
+      document.getElementById("finale").textContent = "that's everything we've made so far. we hope you've enjoyed!"
       }
       
     maPS = (mungapplers * noahs) / 1.5;
@@ -365,13 +376,14 @@ function FE(k){
     pPS = (parks * 500000000000  * noahs) / 0.5;
     qPS = quants * 200000000000000 * noahs;
     gPS = gods * 50000000000000000 * noahs;
+    munPS = (mUNs * 900000000000000000000000 * noahs)/30
     if (mungos > qPS * 5){
     if (inved){mungos -=qPS*5}}
     
     
     mungos = parseFloat(mungos.toFixed(4));
     bank.textContent = numberToWords(mungos);
-    document.getElementById("mps").textContent = numberToWords(parseFloat((mmPS + bmPS + fPS + mPS +pPS + qPS + gPS).toFixed(2)));
+    document.getElementById("mps").textContent = numberToWords(parseFloat((mmPS + bmPS + fPS + mPS +pPS + qPS + gPS + munPS).toFixed(2)));
     
     maPS = numberToWords(maPS)
     mmPS = numberToWords(mmPS)
@@ -383,6 +395,7 @@ function FE(k){
     pPS = numberToWords(pPS)
     qPS = numberToWords(qPS)
     gPS = numberToWords(gPS)
+    munPS = numberToWords(munPS)
     
     
     mP =mungapplePrice
@@ -396,6 +409,7 @@ function FE(k){
     pMP =  parkPrice
     qMP = numberToWords(quantPrice)
     gMP = numberToWords(godP)
+    mUNP = numberToWords(mUNP)
     
     if (mP>1000000){ mP=numberToWords(mP)}
     if (mrP>1000000){ mrP=numberToWords(mrP)}
@@ -454,6 +468,10 @@ function FE(k){
     god.textContent = `$ ${gMP}`;
     document.getElementById("gods").textContent = `you have ${gods} mungods, making you ${gPS} mungos and ${10*gods} of each previous item every second`;
     if (godP > mungos){god.classList.add("disabled") }else {god.classList.remove("disabled") }
+
+    mUN.textContent = `$ ${gMP}`;
+    document.getElementById("mUNs").textContent = `you have ${mUNs} model UNs, making you ${gPS} mungos and ${10*mUNs} of each previous item every second`;
+    if (mUNP > mungos){mUN.classList.add("disabled") }else {mUN.classList.remove("disabled") }
     
     mungoTiplier = mungapples +1;
     }
@@ -511,7 +529,13 @@ function FE(k){
     update();
     }
   }
-  
+    function getmun(){
+    if (mungos >= mUNP){
+    mungos -= mUNP;
+    mUNP *= 1.7773256;
+    mUNs += 1;
+    update();
+  }}
   
   function getfarm(){
     if (mungos >= farmPrice){
@@ -602,7 +626,12 @@ function FE(k){
       mungos+= 500000000000*noahs*parks
       }
   }
-  
+  function munTick(){
+    if (mUNs != 0){
+      showFloatingNumber(900000000000000000000000*noahs*mUNs, "black")
+      mungos+= 900000000000000000000000*noahs*mUNs
+      }
+  }
   function mineTick(){
     if (mines != 0){
       showFloatingNumber(2500000000*noahs*mines)
@@ -637,7 +666,7 @@ function FE(k){
   }
 
   setInterval(makeLocalSave, 750)
-
+  setInterval(munTick, 30000)
   setInterval(minimungoTick, 700);
   setInterval(biggieMungoTick, 350);
   setInterval(mungApplerTick, 1500);
@@ -660,6 +689,7 @@ function FE(k){
   park.onclick = getpark;
   quant.onclick = getquant;
   god.onclick = getgod;
+  mUN.onclick = getmun;
   nU.onclick = () => {if (mungos >= nP && noahs == 1){mungos -= nP;noahs += 1;nU.parentElement.classList.add("bought");nU.textContent = "BOUGHT!"; nU.onclick = () => {}}}
   QU.onclick = () => {if (mungos >= QFP && QF == 0){mungos -= QFP;QF += 1;QU.parentElement.classList.add("bought");QU.textContent = "BOUGHT!";;QU.onclick = () => {}}}
   
