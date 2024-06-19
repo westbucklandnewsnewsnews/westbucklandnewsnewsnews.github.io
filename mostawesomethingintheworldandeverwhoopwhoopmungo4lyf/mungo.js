@@ -469,8 +469,8 @@ function FE(k){
     document.getElementById("gods").textContent = `you have ${gods} mungods, making you ${gPS} mungos and ${10*gods} of each previous item every second`;
     if (godP > mungos){god.classList.add("disabled") }else {god.classList.remove("disabled") }
 
-    mUN.textContent = `$ ${gMP}`;
-    document.getElementById("mUNs").textContent = `you have ${mUNs} model UNs, making you ${gPS} mungos and ${10*mUNs} of each previous item every second`;
+    mUN.textContent = `$ ${mUNP}`;
+    document.getElementById("mUNs").textContent = `you have ${mUNs} model UNs, making you ${munPS} mungos and ${10*mUNs} of each previous item every second`;
     if (mUNP > mungos){mUN.classList.add("disabled") }else {mUN.classList.remove("disabled") }
     
     mungoTiplier = mungapples +1;
