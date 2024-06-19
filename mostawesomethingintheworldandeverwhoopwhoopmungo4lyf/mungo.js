@@ -84,7 +84,7 @@ lb = document.getElementById("load");
 
 
 sb.onclick = () => {sc = makeSaveCode(); alert(`the following code has been copied to your clipboard. please keep it somewhere safe, you will use it to load your game later: \n ${sc} \n you can also find it in the console (f12 or ctrl+shift+c)`);navigator.clipboard.writeText(sc);console.log(sc)}
-lb.onclick = () => {sc = prompt("please enter the save code to load."); if (sc != null){loadSave(sc);if (sc == "ilovemungo"){donezo=true}}};
+lb.onclick = () => {sc = prompt("please enter the save code to load."); if (sc != null){if (sc == "ilovemungo"){donezo=true};loadSave(sc);}};
 
 function youKnowWhat(){
   function eAEJ(jsonObj, SK) {
