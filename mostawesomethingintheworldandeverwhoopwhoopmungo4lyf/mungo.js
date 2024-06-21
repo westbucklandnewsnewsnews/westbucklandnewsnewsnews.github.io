@@ -190,6 +190,7 @@ function FE(k){
     
   function loadSave(save){
     save = FE(save);
+    console.log(save)
     //console.log(save);
     mungos = Number(atob(save["a"][1]));
     mungapples = Number(save["a"][2]);
