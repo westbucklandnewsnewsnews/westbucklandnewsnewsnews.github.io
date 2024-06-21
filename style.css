@@ -29,8 +29,10 @@ font-family: Segoe UI;
   
   .article img {
     width: 100%;
-    height: auto;
+    height: auto; 
+    object-fit: cover;
   }
+  
   
   .article .header2 {
     font-size: 1.5em;
