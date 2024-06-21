@@ -191,18 +191,18 @@ function FE(k){
   function loadSave(save){
     save = FE(save);
     //console.log(save);
-    mungos = BigInt(atob(save["a"][1]));
-    mungapples = parseInt(save["a"][2]);
-    minimungomungos = parseInt((save["a"][3]));
-    minimungos = parseInt((save["a"][4]));
-    biggiemungos = parseInt((save["a"][5]));
-    mungapplers = parseInt((save["a"][6]));
-    minimungomungos = parseInt(save["a"][8]);
-    biggiemungomungos = parseInt(save["a"][9]);
-    farms = parseInt(save["a"][10]);
-    mines = parseInt(save["a"][11]);
-    goldMungos = parseInt(save["a"]["gold"]);
-    noahs = parseInt(save["a"]["nU"]);
+    mungos = Number(atob(save["a"][1]));
+    mungapples = Number(save["a"][2]);
+    minimungomungos = Number((save["a"][3]));
+    minimungos = Number((save["a"][4]));
+    biggiemungos = Number((save["a"][5]));
+    mungapplers = Number((save["a"][6]));
+    minimungomungos = Number(save["a"][8]);
+    biggiemungomungos = Number(save["a"][9]);
+    farms = Number(save["a"][10]);
+    mines = Number(save["a"][11]);
+    goldMungos = Number(save["a"]["gold"]);
+    noahs = Number(save["a"]["nU"]);
     
     update();
     mungapplePrice = ((save["p"][2]));
@@ -634,7 +634,7 @@ function FE(k){
   }
   function mineTick(){
     if (mines != 0){
-      showFloatingNumber(2500000000*noahs*mines)
+      showFloatingNumber(2500000000*noahs*mines)Number
       mungos+= 2500000000*noahs*mines
       if ((Math.floor(Math.random() * 7000) + mines/2) < mines){showFloatingNumber(1000000000000000, "yellow"); goldMungos += 1;mungos += 1000000000000000;}
       update()
