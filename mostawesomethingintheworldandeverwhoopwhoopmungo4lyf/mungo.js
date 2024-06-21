@@ -2,7 +2,7 @@
   up = 0
   ohBabes = CryptoJS.AES.encrypt("now that's mungoTastic", "what the mungo?!");
   alert("mungo clicker is testing new features right now, please report any issues to me please thanks")
-  k = true
+  k = false
   while (k == true){if (prompt("i am literally working on the game right now so like give me 10 minutes") == "dev"){k = false}}
   inved = false
   
@@ -364,7 +364,7 @@ function FE(k){
     if (gods > 0){done=true;mUN.parentElement.style.display = "block"}
     
     if (done){
-      document.getElementById("finale").textContent = "that's everything we've made so far. we hope you've enjoyed!"
+      document.getElementById("finale").textContent = "that's everything we've made. we hope you've enjoyed! there are currently no plans to expand mungo clicker a whole lot more, so check out what we have going for us on our main site."
       }
       
     maPS = (mungapplers * noahs) / 1.5;
