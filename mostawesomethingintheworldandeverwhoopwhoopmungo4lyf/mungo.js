@@ -634,7 +634,7 @@ function FE(k){
   }
   function mineTick(){
     if (mines != 0){
-      showFloatingNumber(2500000000*noahs*mines)Number
+      showFloatingNumber(2500000000*noahs*mines)
       mungos+= 2500000000*noahs*mines
       if ((Math.floor(Math.random() * 7000) + mines/2) < mines){showFloatingNumber(1000000000000000, "yellow"); goldMungos += 1;mungos += 1000000000000000;}
       update()
