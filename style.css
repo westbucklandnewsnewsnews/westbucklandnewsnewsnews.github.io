@@ -22,6 +22,9 @@ font-family: Segoe UI;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   .article img {
@@ -37,6 +40,11 @@ font-family: Segoe UI;
   .article p {
     margin: 10px;
     font-size: 1.2em;
+  }
+  
+  .article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   
 
