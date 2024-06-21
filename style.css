@@ -18,7 +18,7 @@ font-family: Segoe UI;
   }
   
   .article {
-    height:20%;
+/*    height:20%;*/
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
