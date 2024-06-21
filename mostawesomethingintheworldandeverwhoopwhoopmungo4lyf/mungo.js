@@ -99,11 +99,11 @@ function youKnowWhat(){
       return encoded;
   }
 if (14 > 7){
-  m = Number(atob(boats)) ** (1/2);
+  m = Number(Number((boats))) ** (1/2);
   ohmagah = [mungapples, minimungos, biggiemungos];
   o = {"ver":1.3,
     "a":{
-      "1":btoa(m**2),
+      "1":(m**2),
       "2":ohmagah[0],
       "3":mungos,
       "4":ohmagah[1],
@@ -124,7 +124,7 @@ if (14 > 7){
       
       },
     "p":{
-      "1":btoa(m**2),
+      "1":(m**2),
       "2":mungapplePrice,
       "3":mungos,
       "4":minimungoPrice,
@@ -182,7 +182,7 @@ function FE(k){
   
   
   function yeah(){
-    boats = btoa(mungos);
+    boats = (mungos.toString());
     //console.log(youKnowWhat());
     return youKnowWhat();
   }
