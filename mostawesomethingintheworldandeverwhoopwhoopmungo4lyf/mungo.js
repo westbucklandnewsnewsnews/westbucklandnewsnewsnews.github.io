@@ -99,7 +99,7 @@ function youKnowWhat(){
       return encoded;
   }
 if (14 > 7){
-  m = parseInt(atob(boats)) ** (1/2);
+  m = Number(atob(boats)) ** (1/2);
   ohmagah = [mungapples, minimungos, biggiemungos];
   o = {"ver":1.3,
     "a":{
