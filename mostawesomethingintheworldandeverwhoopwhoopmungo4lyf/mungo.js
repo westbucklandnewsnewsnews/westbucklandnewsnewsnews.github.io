@@ -191,7 +191,7 @@ function FE(k){
   function loadSave(save){
     save = FE(save);
     //console.log(save);
-    mungos = (atob(save["a"][1]));
+    mungos = bigint(atob(save["a"][1]));
     mungapples = parseInt(save["a"][2]);
     minimungomungos = parseInt((save["a"][3]));
     minimungos = parseInt((save["a"][4]));
