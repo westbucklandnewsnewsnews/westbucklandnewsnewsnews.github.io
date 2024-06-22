@@ -1,9 +1,12 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
   }
-  
+  #port{
+    width:100%;
+
+  }
   .title {
     margin: 0;
     font-size: 2em;
