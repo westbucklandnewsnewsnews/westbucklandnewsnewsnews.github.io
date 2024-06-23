@@ -52,9 +52,16 @@ async function getRandomWordFromFile(fileUrl) {
     }
 }
 
-async function getRandomWord() {
+async function getRandomWord(diff = null) {
     try {
+        happy = false
+        while (!happy){
         const randomFileUrl = getRandomElement(paths);
+        happy = true
+        if (diff == 3){
+            const randomFileUrl = String(getRandomElement([13, 14, 15, 16, 17, 18, 19, 20, 21, 22])) + "long.txt"
+        }
+    }
         const randomWord = await getRandomWordFromFile(randomFileUrl);
         if (randomWord) {
             return { word: randomWord, len: randomWord.length };
@@ -67,9 +74,9 @@ async function getRandomWord() {
     }
 }
 
-function parseWord(){
+function parseWord(diff = null){
     j = {word:"", len:""}
-    getRandomWord().then(result => {
+    getRandomWord(diff).then(result => {
         if (result) {
             //console.log(`Random word: ${result.word}, Length: ${result.len}`);
             j.word = result.word;
@@ -82,7 +89,7 @@ function parseWord(){
 function getGoing(){
     happy = false
     while (!happy){
-        word = parseWord()
+        word = parseWord(difficulty)
         if (word.len <= diffs[difficulty-1]){
             happy = true
         }
