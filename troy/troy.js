@@ -145,12 +145,38 @@ document.addEventListener('keydown', function(event) {
 }
 });
 
-function checkBoxes(){
-    fufed = {}
-    b = 0
-    for (x of word.word){
-        if (letters[b] == x){
-            grid[row].boxes[b].classlist.add()
+function checkBoxes() {
+    let correctLettersInPlace = {};
+    let correctLettersNotInPlace = {};
+
+
+    for (let i = 0; i < word.word.length; i++) {
+        const targetLetter = word.word[i];
+        if (letters[i] === targetLetter) {
+            grid[row].boxes[i].classList.add("yes");
+            if (!correctLettersInPlace[targetLetter]) {
+                correctLettersInPlace[targetLetter] = 1;
+            } else {
+                correctLettersInPlace[targetLetter]++;
+            }
+        }
+    }
+
+
+    for (let i = 0; i < word.word.length; i++) {
+        const targetLetter = word.word[i];
+        if (letters[i] !== targetLetter) {
+            if (targetLetter in word.word) {
+                if (!correctLettersNotInPlace[targetLetter]) {
+                    correctLettersNotInPlace[targetLetter] = 1;
+                } else {
+                    correctLettersNotInPlace[targetLetter]++;
+                }
+                if (correctLettersNotInPlace[targetLetter] <= correctLettersInPlace[targetLetter]) {
+                    grid[row].boxes[i].classList.add("close");
+                }
+            }
         }
     }
 }
+
