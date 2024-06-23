@@ -102,7 +102,7 @@ async function parseWord(diff = null) {
 
 async function getGoing() {
     try {
-        const word = await parseWord(difficulty);
+        word = await parseWord(difficulty);
         if (word) {
             grid = createGrid(word.len, 8 - difficulty);
             boxN = 0
