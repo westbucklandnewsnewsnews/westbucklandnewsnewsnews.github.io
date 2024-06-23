@@ -93,9 +93,6 @@ function getGoing(){
         if (word.len <= diffs[difficulty-1]){
             happy = true
         }
-        if (difficulty == 3 && word.len < 12){
-            happy = false
-        }
     }
     createGrid(word.len, Math.floor(8 - difficulty))
     console.log(word)
@@ -108,7 +105,11 @@ document.addEventListener('keydown', function(event) {
     const isSpace = char === ' ';
     const isDash = char === '-';
     const isApos = char === "'"
+    const isBackspace = event.key === 'Backspace'
     if (isAlphanumeric || isSpace || isDash || isApos) {
         console.log(char);
+    }
+    else if (isBackspace){
+        console.log("backspace")
     }
 });
