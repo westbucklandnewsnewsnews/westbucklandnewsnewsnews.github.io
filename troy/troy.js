@@ -19,19 +19,26 @@ mediumButton.onclick  = () => {clearButtons();difficulty = 2;getGoing();}
 hardButton.onclick  = () => {clearButtons();difficulty = 3;getGoing();}
 
 function createGrid(cols, rows = 5) {
-    container = document.getElementById('grid-container');
+    const grid = []; // Initialize an array to hold rows
+
+    const container = document.getElementById('grid-container');
     container.innerHTML = '';
 
     for (let i = 0; i < rows; i++) {
         const row = document.createElement('div');
         row.className = 'row';
+        const boxes = []; // Initialize an array to hold boxes for this row
         for (let j = 0; j < cols; j++) {
             const box = document.createElement('div');
             box.className = 'box';
             row.appendChild(box);
+            boxes.push(box); // Push each box element into the boxes array
         }
         container.appendChild(row);
+        grid.push({ row: i, boxes: boxes }); // Push an object with row number and boxes array into grid array
     }
+
+    return grid; // Return the grid array containing rows and boxes
 }
 
 function getRandomElement(arr) {
@@ -105,20 +112,24 @@ async function getGoing() {
 
 
 document.addEventListener('keydown', function(event) {
-    const char = event.key;
-    const isAlphanumeric = /^[a-zA-Z0-9]$/.test(char);
-    const isSpace = char === ' ';
-    const isDash = char === '-';
-    const isApos = char === "'"
-    const isBackspace = event.key == 'Backspace'
-    const isEnter = event.key == "Enter"
-    if (isAlphanumeric || isSpace || isDash || isApos) {
-        console.log(char);
-    }
-    else if (isBackspace){
-        console.log("backspace")
-    }
-    else if (isEnter){
-        console.log("enter")
-    }
+    if (box <= word.len){
+        const char = event.key;
+        const isAlphanumeric = /^[a-zA-Z0-9]$/.test(char);
+        const isSpace = char === ' ';
+        const isDash = char === '-';
+        const isApos = char === "'"
+        const isBackspace = event.key == 'Backspace'
+        const isEnter = event.key == "Enter"
+        if (isAlphanumeric || isSpace || isDash || isApos) {
+            box.textContent = char
+            box++
+        }
+        else if (isBackspace){
+            box-= 1
+            box.textContent = ""
+        }
+        else if (isEnter){
+            checkBoxes()
+        }
+}
 });
