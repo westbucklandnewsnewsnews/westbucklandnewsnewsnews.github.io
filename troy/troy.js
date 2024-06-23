@@ -105,11 +105,15 @@ document.addEventListener('keydown', function(event) {
     const isSpace = char === ' ';
     const isDash = char === '-';
     const isApos = char === "'"
-    const isBackspace = event.key === 'Backspace'
+    const isBackspace = event.key == 'Backspace'
+    const isEnter = event.key == "Enter"
     if (isAlphanumeric || isSpace || isDash || isApos) {
         console.log(char);
     }
     else if (isBackspace){
         console.log("backspace")
+    }
+    else if (isEnter){
+        console.log("enter")
     }
 });
