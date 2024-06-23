@@ -12,6 +12,9 @@ const medium = 12
 const hard = 100
 const diffs =[easy, medium, hard]
 
+boxN = 0
+row = 0
+
 function clearButtons(){document.getElementById("buttons").style.display = "none";}
 
 easyButton.onclick  = () => {clearButtons();difficulty = 1;getGoing();}
@@ -27,18 +30,17 @@ function createGrid(cols, rows = 5) {
     for (let i = 0; i < rows; i++) {
         const row = document.createElement('div');
         row.className = 'row';
-        const boxes = []; // Initialize an array to hold boxes for this row
+        const boxes = []; 
         for (let j = 0; j < cols; j++) {
             const box = document.createElement('div');
             box.className = 'box';
             row.appendChild(box);
-            boxes.push(box); // Push each box element into the boxes array
+            boxes.push(box); 
         }
         container.appendChild(row);
-        grid.push({ row: i, boxes: boxes }); // Push an object with row number and boxes array into grid array
-    }
+        grid.push({ row: i, boxes: boxes });     }
 
-    return grid; // Return the grid array containing rows and boxes
+    return grid; 
 }
 
 function getRandomElement(arr) {
@@ -100,7 +102,9 @@ async function getGoing() {
     try {
         const word = await parseWord(difficulty);
         if (word) {
-            createGrid(word.len, 8 - difficulty);
+            var grid = createGrid(word.len, 8 - difficulty);
+            boxN = 0
+            row = 0
             console.log(word);
         } else {
             console.error('Failed to get word');
@@ -112,7 +116,7 @@ async function getGoing() {
 
 
 document.addEventListener('keydown', function(event) {
-    if (box <= word.len){
+    if (boxN <= word.len){
         const char = event.key;
         const isAlphanumeric = /^[a-zA-Z0-9]$/.test(char);
         const isSpace = char === ' ';
@@ -121,15 +125,17 @@ document.addEventListener('keydown', function(event) {
         const isBackspace = event.key == 'Backspace'
         const isEnter = event.key == "Enter"
         if (isAlphanumeric || isSpace || isDash || isApos) {
-            box.textContent = char
-            box++
+            grid[row].boxes[boxN].textContent = char
+            boxN++
         }
         else if (isBackspace){
-            box-= 1
-            box.textContent = ""
+            boxN-= 1
+            grid[row].boxes[boxN].textContent = ""
         }
         else if (isEnter){
+            if (boxN == word.len){
             checkBoxes()
-        }
+            row++
+        }}
 }
 });

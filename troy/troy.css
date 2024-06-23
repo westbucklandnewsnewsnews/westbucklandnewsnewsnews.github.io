@@ -58,6 +58,7 @@ button {
 }
 
 .box {
+    font-size:70px;
     width: 85px;
     height: 85px;
     margin: 5px;
