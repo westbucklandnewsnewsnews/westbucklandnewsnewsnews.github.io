@@ -136,9 +136,10 @@ document.addEventListener('keydown', function(event) {
             }
         }
         else if (isBackspace){
+            if (boxN > 0){
             boxN-= 1
             grid[row].boxes[boxN].textContent = ""
-            letters.pop()
+            letters.pop()}
         }
         else if (isEnter){
             if (boxN == word.len){
