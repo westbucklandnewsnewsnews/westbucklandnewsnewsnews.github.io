@@ -10,7 +10,7 @@ button {
 }
 
 #easy {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50; 
 }
 
 #easy:hover {
@@ -19,16 +19,15 @@ button {
 }
 
 #medium {
-    background-color: #FFA500; /* Orange */
+    background-color: #FFA500; 
 }
-
 #medium:hover {
     background-color: #e69500;
     transform: scale(1.1);
 }
 
 #hard {
-    background-color: #f44336; /* Red */
+    background-color: #f44336; 
 }
 
 #hard:hover {
