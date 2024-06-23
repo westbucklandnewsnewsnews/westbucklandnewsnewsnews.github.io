@@ -1,0 +1,37 @@
+button {
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 18px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#easy {
+    background-color: #4CAF50; /* Green */
+}
+
+#easy:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
+
+#medium {
+    background-color: #FFA500; /* Orange */
+}
+
+#medium:hover {
+    background-color: #e69500;
+    transform: scale(1.1);
+}
+
+#hard {
+    background-color: #f44336; /* Red */
+}
+
+#hard:hover {
+    background-color: #d7352a;
+    transform: scale(1.1);
+}
