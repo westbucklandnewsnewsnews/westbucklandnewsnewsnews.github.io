@@ -14,7 +14,7 @@ const diffs =[easy, medium, hard]
 
 boxN = 0
 row = 0
-
+word = ""
 grid = []
 
 function clearButtons(){document.getElementById("buttons").style.display = "none";}
