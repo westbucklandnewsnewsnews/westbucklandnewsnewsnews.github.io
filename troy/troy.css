@@ -54,12 +54,19 @@ button {
 .row {
     display: flex;
 }
+.right{
+    background-color: #4CAF50;
+}
+
+.close{
+    background-color: #e45429;
+}
 
 .box {
     width: 200px;
     height: 50px;
     margin: 5px;
-    background-color: #4CAF50; /* Green */
+    background-color: #818681ea; /* Green */
     border-radius: 5px;
     transition: background-color 0.3s, transform 0.3s;
 }
