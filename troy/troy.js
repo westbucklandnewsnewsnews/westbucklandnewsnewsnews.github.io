@@ -53,7 +53,7 @@ async function getRandomWord() {
         const randomFileUrl = getRandomElement(paths);
         const randomWord = await getRandomWordFromFile("https://westbucklandnewsnewsnews.github.io/troy/"+randomFileUrl);
         console.log(`Random word: ${randomWord}`);
-        return {"word":randomWord, "length":randomWord.length}
+        return {word:randomWord, len:randomWord.length}
     } catch (error) {
         console.error('Error getting random word:', error);
     }
