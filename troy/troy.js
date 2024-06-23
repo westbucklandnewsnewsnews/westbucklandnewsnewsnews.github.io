@@ -15,6 +15,8 @@ const diffs =[easy, medium, hard]
 boxN = 0
 row = 0
 
+grid = []
+
 function clearButtons(){document.getElementById("buttons").style.display = "none";}
 
 easyButton.onclick  = () => {clearButtons();difficulty = 1;getGoing();}
@@ -22,7 +24,7 @@ mediumButton.onclick  = () => {clearButtons();difficulty = 2;getGoing();}
 hardButton.onclick  = () => {clearButtons();difficulty = 3;getGoing();}
 
 function createGrid(cols, rows = 5) {
-    const grid = []; // Initialize an array to hold rows
+    const g = []; // Initialize an array to hold rows
 
     const container = document.getElementById('grid-container');
     container.innerHTML = '';
@@ -38,9 +40,9 @@ function createGrid(cols, rows = 5) {
             boxes.push(box); 
         }
         container.appendChild(row);
-        grid.push({ row: i, boxes: boxes });     }
+        g.push({ row: i, boxes: boxes });     }
 
-    return grid; 
+    return g; 
 }
 
 function getRandomElement(arr) {
@@ -102,33 +104,9 @@ async function getGoing() {
     try {
         const word = await parseWord(difficulty);
         if (word) {
-            var grid = createGrid(word.len, 8 - difficulty);
+            grid = createGrid(word.len, 8 - difficulty);
             boxN = 0
             row = 0
-            document.addEventListener('keydown', function(event) {
-                if (boxN <= word.len){
-                    const char = event.key;
-                    const isAlphanumeric = /^[a-zA-Z0-9]$/.test(char);
-                    const isSpace = char === ' ';
-                    const isDash = char === '-';
-                    const isApos = char === "'"
-                    const isBackspace = event.key == 'Backspace'
-                    const isEnter = event.key == "Enter"
-                    if (isAlphanumeric || isSpace || isDash || isApos) {
-                        grid[row].boxes[boxN].textContent = char
-                        boxN++
-                    }
-                    else if (isBackspace){
-                        boxN-= 1
-                        grid[row].boxes[boxN].textContent = ""
-                    }
-                    else if (isEnter){
-                        if (boxN == word.len){
-                        checkBoxes()
-                        row++
-                    }}
-            }
-            });
         } else {
             console.error('Failed to get word');
         }
@@ -139,3 +117,27 @@ async function getGoing() {
 }
 
 
+document.addEventListener('keydown', function(event) {
+    if (boxN <= word.len){
+        const char = event.key;
+        const isAlphanumeric = /^[a-zA-Z0-9]$/.test(char);
+        const isSpace = char === ' ';
+        const isDash = char === '-';
+        const isApos = char === "'"
+        const isBackspace = event.key == 'Backspace'
+        const isEnter = event.key == "Enter"
+        if (isAlphanumeric || isSpace || isDash || isApos) {
+            grid[row].boxes[boxN].textContent = char
+            boxN++
+        }
+        else if (isBackspace){
+            boxN-= 1
+            grid[row].boxes[boxN].textContent = ""
+        }
+        else if (isEnter){
+            if (boxN == word.len){
+            checkBoxes()
+            row++
+        }}
+}
+});
