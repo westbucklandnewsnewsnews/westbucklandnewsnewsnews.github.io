@@ -154,9 +154,12 @@ document.addEventListener('keydown', function(event) {
                 createGrid(0)
                 document.getElementById("buttons").style.display = "flex"
             }
-            else if (row == 4*difficulty){
+            if (row == 4*difficulty){
                 createGrid(0)
                 document.getElementById("buttons").style.display = "flex"
+                row = 0
+                boxN = 0
+                grid = {}
             }
               row++
             letters = []
