@@ -7,12 +7,16 @@ const hardButton = document.getElementById("hard")
 const paths = ["1long.txt", "2long.txt", "3long.txt", "4long.txt", "5long.txt", "6long.txt", "7long.txt", "8long.txt", "9long.txt", "10long.txt", "11long.txt", "12long.txt", "13long.txt", "14long.txt", "15long.txt", "16long.txt", "17long.txt", "18long.txt", "19long.txt", "20long.txt", "21long.txt", "22long.txt"]
 
 var difficulty = null
+const easy = 5
+const medium = 12
+const hard = 100
+const diffs =[easy, medium, hard]
 
 function clearButtons(){document.getElementById("buttons").style.display = "none";}
 
-easyButton.onclick  = () => {clearButtons();difficulty = 1}
-mediumButton.onclick  = () => {clearButtons();difficulty = 2}
-hardButton.onclick  = () => {clearButtons();difficulty = 3}
+easyButton.onclick  = () => {clearButtons();difficulty = 1;getGoing();}
+mediumButton.onclick  = () => {clearButtons();difficulty = 2;getGoing();}
+hardButton.onclick  = () => {clearButtons();difficulty = 3;getGoing();}
 
 function createGrid(rows, cols=5) {
     container = document.getElementById('grid-container');
@@ -73,4 +77,20 @@ function parseWord(){
         }
     });
     return j
+}
+
+function getGoing(){
+    happy = false
+    while (!happy){
+        word = parseWord()
+        if (word.len <= diffs[difficulty-1]){
+            happy = true
+        }
+        if (difficulty == 3 && word.len < 12){
+            happy = false
+        }
+    }
+    createGrid(word.len, math.floor(8 - difficulty))
+    console.log(word)
+
 }
