@@ -63,8 +63,8 @@ button {
 }
 
 .box {
-    width: 200px;
-    height: 50px;
+    width: 85px;
+    height: 85px;
     margin: 5px;
     background-color: #818681ea; /* Green */
     border-radius: 5px;
