@@ -94,7 +94,7 @@ function getGoing(){
             happy = true
         }
     }
-    createGrid(word.len, Math.floor(8 - difficulty))
+    createGrid(word.len, 8 - difficulty)
     console.log(word)
 
 }
