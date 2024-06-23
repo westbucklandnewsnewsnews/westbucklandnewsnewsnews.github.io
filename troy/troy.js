@@ -187,30 +187,30 @@ function checkBoxes() {
     return correctCount;
 }
 
+function startConfetti(duration) {
+    const confettiContainer = document.createElement('div');
+    confettiContainer.id = 'confetti-container';
+    document.body.appendChild(confettiContainer);
 
-function confetti(durationMs) {
-    const colors = ['#f00', '#0f0', '#00f', '#ff0', '#0ff', '#f0f']; // Array of colors
-    const body = document.body;
-  
-    const confettiInterval = setInterval(() => {
-      const confettiPiece = document.createElement('div');
-      confettiPiece.classList.add('confetti');
-      confettiPiece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-      confettiPiece.style.left = `${Math.random() * 100}vw`;
-      confettiPiece.style.top = `${Math.random() * 100}vh`; // Random vertical position
-      confettiPiece.style.animationDuration = `${Math.random() * 3 + 2}s`; // Random animation duration
-  
-      body.appendChild(confettiPiece);
-  
-      setTimeout(() => {
-        confettiPiece.remove();
-      }, durationMs);
-    }, 100); // Generate confetti every 100ms
-  
+    const colors = ['#FFC107', '#FF5722', '#4CAF50', '#2196F3', '#9C27B0', '#FFEB3B'];
+
+    for (let i = 0; i < 100; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.left = Math.random() * 100 + 'vw';
+        confetti.style.top = Math.random() * 100 + 'vw';
+        confetti.style.animationDelay = Math.random() * 5 + 's';
+        confettiContainer.appendChild(confetti);
+    }
+
     setTimeout(() => {
-      clearInterval(confettiInterval); // Stop generating confetti after durationMs
-    }, durationMs);
-  }
+        confettiContainer.remove();
+    }, duration);
+}
+
+startConfetti(10000); // Run for 10 seconds
+
   
   
 
