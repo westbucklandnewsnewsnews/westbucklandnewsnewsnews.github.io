@@ -52,6 +52,11 @@ function getRandomWord() {
     try {
         const randomFileUrl = getRandomElement(paths);
         const randomWord = getRandomWordFromFile("https://westbucklandnewsnewsnews.github.io/troy/"+randomFileUrl);
+        randomWord.then(result => {
+            randomWord = result
+        }).catch(error => {
+            console.error(error);
+        });
         console.log(`Random word: ${randomWord}`);
         return {word:randomWord, len:randomWord.length}
     } catch (error) {
