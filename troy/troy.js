@@ -56,13 +56,13 @@ async function getRandomWord(diff = null) {
     try {
         happy = false
         while (!happy){
-        const randomFileUrl = getRandomElement(paths);
-        happy = true
-        if (diff == 3){
-            const randomFileUrl = String(getRandomElement([13, 14, 15, 16, 17, 18, 19, 20, 21, 22])) + "long.txt"
+            randomFileUrl = getRandomElement(paths);
+            happy = true
+            if (diff == 3){
+                randomFileUrl = String(getRandomElement([13, 14, 15, 16, 17, 18, 19, 20, 21, 22])) + "long.txt"
+            }
         }
-    }
-        const randomWord = await getRandomWordFromFile(randomFileUrl);
+        randomWord = await getRandomWordFromFile(randomFileUrl);
         if (randomWord) {
             return { word: randomWord, len: randomWord.length };
         } else {
