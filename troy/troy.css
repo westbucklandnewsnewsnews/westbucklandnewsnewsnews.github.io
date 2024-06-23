@@ -92,7 +92,19 @@ button {
     transform: scale(1.1);
 }
 
-@keyframes float {
+@keyframes bounce {
+    0% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-100px) rotate(0deg);
+    }
+    100% {
+      transform: translateY(0) rotate(360deg);
+    }
+  }
+
+  @keyframes float {
     0% {
       transform: translateY(0) translateX(0) rotate(0deg);
     }
