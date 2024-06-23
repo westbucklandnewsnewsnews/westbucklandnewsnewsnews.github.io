@@ -34,13 +34,13 @@ function getRandomElement(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
 
-function getRandomWordFromFile(fileUrl) {
+async function getRandomWordFromFile(fileUrl) {
     try {
-        const response = fetch(fileUrl);
+        const response = await fetch(fileUrl);
         if (!response.ok) {
             throw new Error('Network response was not ok ' + response.statusText);
         }
-        const data = response.text();
+        const data = await response.text();
         const words = data.split(';;;');
         return getRandomElement(words);
     } catch (error) {
