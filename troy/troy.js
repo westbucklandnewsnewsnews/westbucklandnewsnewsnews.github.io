@@ -105,37 +105,37 @@ async function getGoing() {
             var grid = createGrid(word.len, 8 - difficulty);
             boxN = 0
             row = 0
-            console.log(word);
+            document.addEventListener('keydown', function(event) {
+                if (boxN <= word.len){
+                    const char = event.key;
+                    const isAlphanumeric = /^[a-zA-Z0-9]$/.test(char);
+                    const isSpace = char === ' ';
+                    const isDash = char === '-';
+                    const isApos = char === "'"
+                    const isBackspace = event.key == 'Backspace'
+                    const isEnter = event.key == "Enter"
+                    if (isAlphanumeric || isSpace || isDash || isApos) {
+                        grid[row].boxes[boxN].textContent = char
+                        boxN++
+                    }
+                    else if (isBackspace){
+                        boxN-= 1
+                        grid[row].boxes[boxN].textContent = ""
+                    }
+                    else if (isEnter){
+                        if (boxN == word.len){
+                        checkBoxes()
+                        row++
+                    }}
+            }
+            });
         } else {
             console.error('Failed to get word');
         }
     } catch (error) {
         console.error('Error in getGoing:', error);
     }
+
 }
 
 
-document.addEventListener('keydown', function(event) {
-    if (boxN <= word.len){
-        const char = event.key;
-        const isAlphanumeric = /^[a-zA-Z0-9]$/.test(char);
-        const isSpace = char === ' ';
-        const isDash = char === '-';
-        const isApos = char === "'"
-        const isBackspace = event.key == 'Backspace'
-        const isEnter = event.key == "Enter"
-        if (isAlphanumeric || isSpace || isDash || isApos) {
-            grid[row].boxes[boxN].textContent = char
-            boxN++
-        }
-        else if (isBackspace){
-            boxN-= 1
-            grid[row].boxes[boxN].textContent = ""
-        }
-        else if (isEnter){
-            if (boxN == word.len){
-            checkBoxes()
-            row++
-        }}
-}
-});
