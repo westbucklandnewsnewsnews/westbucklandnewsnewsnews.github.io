@@ -5,6 +5,7 @@ const hardButton = document.getElementById("hard")
 
 const jsConfetti = new JSConfetti()
 
+
 const paths = ["1long.txt", "2long.txt", "3long.txt", "4long.txt", "5long.txt", "6long.txt", "7long.txt", "8long.txt", "9long.txt", "10long.txt", "11long.txt", "12long.txt", "13long.txt", "14long.txt", "15long.txt", "16long.txt", "17long.txt", "18long.txt", "19long.txt", "20long.txt", "21long.txt", "22long.txt"]
 
 var difficulty = null
@@ -142,9 +143,21 @@ document.addEventListener('keydown', function(event) {
         else if (isEnter){
             if (boxN == word.len){
             if (checkBoxes() == word.len){
-
+                jsConfetti.addConfetti()
+                jsConfetti.addConfetti({emojis: ['🌈', '⚡️', '💥', '✨', '💫', '🌸'],})
+                jsConfetti.addConfetti({
+                    confettiColors: [
+                      '#ff0a54', '#ff477e', '#ff7096', '#ff85a1', '#fbb1bd', '#f9bec7',
+                    ],
+                  })
+                createGrid(0)
+                document.getElementById("buttons").style.display = "block"
             }
-            row++
+            else if (row == 4*difficulty){
+                createGrid(0)
+                document.getElementById("buttons").style.display = "block"
+            }
+              row++
             letters = []
             boxN = 0
         }}
