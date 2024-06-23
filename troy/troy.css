@@ -56,7 +56,12 @@ button {
 .row {
     display: flex;
 }
-
+.yes{
+    background-color: #00b100;
+}
+.close{
+    background-color: #e26f11;
+}
 .box {
     width: 85px;
     height: 85px;

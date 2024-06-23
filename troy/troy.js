@@ -16,6 +16,7 @@ boxN = 0
 row = 0
 word = ""
 grid = []
+letters = []
 
 function clearButtons(){document.getElementById("buttons").style.display = "none";}
 
@@ -118,7 +119,7 @@ async function getGoing() {
 
 
 document.addEventListener('keydown', function(event) {
-    if (boxN <= word.len){
+    if (boxN < word.len){
         const char = event.key;
         const isAlphanumeric = /^[a-zA-Z0-9]$/.test(char);
         const isSpace = char === ' ';
@@ -129,10 +130,12 @@ document.addEventListener('keydown', function(event) {
         if (isAlphanumeric || isSpace || isDash || isApos) {
             grid[row].boxes[boxN].textContent = char
             boxN++
+            letters.push(char)
         }
         else if (isBackspace){
             boxN-= 1
             grid[row].boxes[boxN].textContent = ""
+            letters.pop()
         }
         else if (isEnter){
             if (boxN == word.len){
@@ -141,3 +144,13 @@ document.addEventListener('keydown', function(event) {
         }}
 }
 });
+
+function checkBoxes(){
+    fufed = {}
+    b = 0
+    for (x of word.word){
+        if (letters[b] == x){
+            grid[row].boxes[b].classlist.add()
+        }
+    }
+}
