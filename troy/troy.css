@@ -1,7 +1,7 @@
 button {
-    padding: 15px 30px;
-    margin: 10px;
-    font-size: 18px;
+    padding: 20px 40px;
+    margin: 15px;
+    font-size: 20px;
     color: white;
     border: none;
     border-radius: 5px;
@@ -10,7 +10,7 @@ button {
 }
 
 #easy {
-    background-color: #4CAF50;
+    background-color: #4CAF50; /* Green */
 }
 
 #easy:hover {
@@ -19,15 +19,16 @@ button {
 }
 
 #medium {
-    background-color: #FFA500;
+    background-color: #FFA500; /* Orange */
 }
+
 #medium:hover {
     background-color: #e69500;
     transform: scale(1.1);
 }
 
 #hard {
-    background-color: #f44336;
+    background-color: #f44336; /* Red */
 }
 
 #hard:hover {
