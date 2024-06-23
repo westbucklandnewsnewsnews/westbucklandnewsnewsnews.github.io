@@ -72,4 +72,5 @@ function parseWord(){
             j.len = result.len;
         }
     });
+    return j
 }
