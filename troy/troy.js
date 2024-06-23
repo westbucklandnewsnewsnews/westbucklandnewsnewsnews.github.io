@@ -75,24 +75,34 @@ async function getRandomWord(diff = null) {
     }
 }
 
-function parseWord(diff = null){
-    j = {word:"", len:""}
-    getRandomWord(diff).then(result => {
+async function parseWord(diff = null) {
+    try {
+        const result = await getRandomWord(diff);
         if (result) {
-            //console.log(`Random word: ${result.word}, Length: ${result.len}`);
-            j.word = result.word;
-            j.len = result.len;
+            return { word: result.word, len: result.len };
+        } else {
+            throw new Error('Failed to generate a random word');
         }
-    });
-    return j
+    } catch (error) {
+        console.error('Error getting random word:', error);
+        return null;
+    }
 }
 
-function getGoing(){
-    word = parseWord(difficulty)
-    createGrid(word.len, 8 - difficulty)
-    console.log(word)
-
+async function getGoing() {
+    try {
+        const word = await parseWord(difficulty);
+        if (word) {
+            createGrid(word.len, 8 - difficulty);
+            console.log(word);
+        } else {
+            console.error('Failed to get word');
+        }
+    } catch (error) {
+        console.error('Error in getGoing:', error);
+    }
 }
+
 
 document.addEventListener('keydown', function(event) {
     const char = event.key;
