@@ -197,6 +197,7 @@ function confetti(durationMs) {
       confettiPiece.classList.add('confetti');
       confettiPiece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
       confettiPiece.style.left = `${Math.random() * 100}vw`;
+      confettiPiece.style.top = `${Math.random() * 100}vh`; // Random vertical position
       confettiPiece.style.animationDuration = `${Math.random() * 3 + 2}s`; // Random animation duration
   
       body.appendChild(confettiPiece);
@@ -210,5 +211,6 @@ function confetti(durationMs) {
       clearInterval(confettiInterval); // Stop generating confetti after durationMs
     }, durationMs);
   }
+  
   
 

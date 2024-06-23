@@ -92,15 +92,12 @@ button {
     transform: scale(1.1);
 }
 
-@keyframes bounce {
+@keyframes float {
     0% {
-      transform: translateY(0) rotate(0deg);
-    }
-    50% {
-      transform: translateY(-100px) rotate(0deg);
+      transform: translateY(0) translateX(0) rotate(0deg);
     }
     100% {
-      transform: translateY(0) rotate(360deg);
+      transform: translateY(-500px) translateX(calc((100vw - 20px) * (Math.random() - 0.5))) rotate(360deg);
     }
   }
 
@@ -109,15 +106,6 @@ button {
     width: 20px;
     height: 10px;
     background-color: #f00;
-    animation: float 4s ease-in-out infinite, bounce 1s ease-in-out infinite;
+    animation: float 4s ease-in-out infinite;
     z-index: 1000;
-  }
-
-  @keyframes float {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(-500px);
-    }
   }
