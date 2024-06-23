@@ -18,7 +18,7 @@ easyButton.onclick  = () => {clearButtons();difficulty = 1;getGoing();}
 mediumButton.onclick  = () => {clearButtons();difficulty = 2;getGoing();}
 hardButton.onclick  = () => {clearButtons();difficulty = 3;getGoing();}
 
-function createGrid(rows, cols=5) {
+function createGrid(cols, rows = 5) {
     container = document.getElementById('grid-container');
     container.innerHTML = '';
 
