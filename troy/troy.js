@@ -14,7 +14,7 @@ easyButton.onclick  = () => {clearButtons();difficulty = 1}
 mediumButton.onclick  = () => {clearButtons();difficulty = 2}
 hardButton.onclick  = () => {clearButtons();difficulty = 3}
 
-function createGrid(rows, cols) {
+function createGrid(rows, cols=5) {
     container = document.getElementById('grid-container');
     container.innerHTML = '';
 
@@ -53,6 +53,7 @@ async function getRandomWord() {
         const randomFileUrl = getRandomElement(paths);
         const randomWord = await getRandomWordFromFile("https://westbucklandnewsnewsnews.github.io/troy/"+randomFileUrl);
         console.log(`Random word: ${randomWord}`);
+        return {"word":randomWord, "length":randomWord.length}
     } catch (error) {
         console.error('Error getting random word:', error);
     }
