@@ -3,8 +3,6 @@ const easyButton = document.getElementById("easy")
 const mediumButton = document.getElementById("medium")
 const hardButton = document.getElementById("hard")
 
-import JSConfetti from 'js-confetti'
-
 const jsConfetti = new JSConfetti()
 
 const paths = ["1long.txt", "2long.txt", "3long.txt", "4long.txt", "5long.txt", "6long.txt", "7long.txt", "8long.txt", "9long.txt", "10long.txt", "11long.txt", "12long.txt", "13long.txt", "14long.txt", "15long.txt", "16long.txt", "17long.txt", "18long.txt", "19long.txt", "20long.txt", "21long.txt", "22long.txt"]
