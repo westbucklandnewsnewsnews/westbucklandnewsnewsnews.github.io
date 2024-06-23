@@ -152,6 +152,9 @@ function checkBoxes() {
     let correctLettersInPlace = {};
     let correctLettersNotInPlace = {};
 
+    for (let box of grid[row].boxes) {
+        box.classList.remove("yes", "close");
+    }
 
     for (let i = 0; i < word.word.length; i++) {
         const targetLetter = word.word[i];
@@ -162,24 +165,17 @@ function checkBoxes() {
             } else {
                 correctLettersInPlace[targetLetter]++;
             }
-        }
-    }
-
-
-    for (let i = 0; i < word.word.length; i++) {
-        const targetLetter = word.word[i];
-        if (letters[i] !== targetLetter) {
-            if ( word.word.includes(targetLetter)) {
-                if (!correctLettersNotInPlace[targetLetter]) {
-                    correctLettersNotInPlace[targetLetter] = 1;
+        } else {
+            if (word.word.includes(letters[i])) {
+                if (!correctLettersNotInPlace[letters[i]]) {
+                    correctLettersNotInPlace[letters[i]] = 1;
                 } else {
-                    correctLettersNotInPlace[targetLetter]++;
+                    correctLettersNotInPlace[letters[i]]++;
                 }
-                if (correctLettersNotInPlace[targetLetter] <= correctLettersInPlace[targetLetter]) {
-                    grid[row].boxes[i].classList.add("close");
-                }
+                grid[row].boxes[i].classList.add("close");
             }
         }
     }
 }
+
 
