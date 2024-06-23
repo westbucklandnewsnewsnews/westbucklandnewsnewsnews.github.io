@@ -139,9 +139,10 @@ document.addEventListener('keydown', function(event) {
             letters.pop()
         }
         else if (isEnter){
-            console.log("ent")
             if (boxN == word.len){
-            checkBoxes()
+            if (checkBoxes() == word.len){
+
+            }
             row++
             letters = []
             boxN = 0
@@ -152,15 +153,14 @@ function checkBoxes() {
     let correctLettersInPlace = {};
     let correctLettersNotInPlace = {};
     let alreadyHighlighted = [];
+    let correctCount = 0;
 
     // Clear previous marks
     for (let box of grid[row].boxes) {
         box.classList.remove("yes", "close");
     }
 
-    // First pass: Mark correct letters in the right place
     for (let i = 0; i < word.word.length; i++) {
-        grid[row].boxes[i].classList.add("checked");
         const targetLetter = word.word[i];
         if (letters[i] === targetLetter) {
             grid[row].boxes[i].classList.add("yes");
@@ -168,10 +168,10 @@ function checkBoxes() {
                 correctLettersInPlace[targetLetter] = true;
             }
             alreadyHighlighted.push(targetLetter);
+            correctCount++;
         }
     }
 
-    // Second pass: Mark correct letters not in the right place
     for (let i = 0; i < word.word.length; i++) {
         const targetLetter = word.word[i];
         if (letters[i] !== targetLetter) {
@@ -183,7 +183,32 @@ function checkBoxes() {
             }
         }
     }
+
+    return correctCount;
 }
 
 
+function confetti(durationMs) {
+    const colors = ['#f00', '#0f0', '#00f', '#ff0', '#0ff', '#f0f']; // Array of colors
+    const body = document.body;
+  
+    const confettiInterval = setInterval(() => {
+      const confettiPiece = document.createElement('div');
+      confettiPiece.classList.add('confetti');
+      confettiPiece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      confettiPiece.style.left = `${Math.random() * 100}vw`;
+      confettiPiece.style.animationDuration = `${Math.random() * 3 + 2}s`; // Random animation duration
+  
+      body.appendChild(confettiPiece);
+  
+      setTimeout(() => {
+        confettiPiece.remove();
+      }, durationMs);
+    }, 100); // Generate confetti every 100ms
+  
+    setTimeout(() => {
+      clearInterval(confettiInterval); // Stop generating confetti after durationMs
+    }, durationMs);
+  }
+  
 

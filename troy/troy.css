@@ -91,3 +91,35 @@ button {
     background-color: #687568;
     transform: scale(1.1);
 }
+
+@keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-100px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .confetti {
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    background-color: #f00;
+    animation: float 4s ease-in-out infinite, bounce 1s ease-in-out infinite;
+    z-index: 1000;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-500px);
+      opacity: 0;
+    }
+  }
