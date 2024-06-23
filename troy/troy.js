@@ -151,31 +151,38 @@ document.addEventListener('keydown', function(event) {
 function checkBoxes() {
     let correctLettersInPlace = {};
     let correctLettersNotInPlace = {};
+    let alreadyHighlighted = [];
 
+    // Clear previous marks
     for (let box of grid[row].boxes) {
         box.classList.remove("yes", "close");
     }
 
+    // First pass: Mark correct letters in the right place
     for (let i = 0; i < word.word.length; i++) {
         const targetLetter = word.word[i];
         if (letters[i] === targetLetter) {
             grid[row].boxes[i].classList.add("yes");
             if (!correctLettersInPlace[targetLetter]) {
-                correctLettersInPlace[targetLetter] = 1;
-            } else {
-                correctLettersInPlace[targetLetter]++;
+                correctLettersInPlace[targetLetter] = true;
             }
-        } else {
+            alreadyHighlighted.push(targetLetter);
+        }
+    }
+
+    // Second pass: Mark correct letters not in the right place
+    for (let i = 0; i < word.word.length; i++) {
+        const targetLetter = word.word[i];
+        if (letters[i] !== targetLetter) {
             if (word.word.includes(letters[i])) {
-                if (!correctLettersNotInPlace[letters[i]]) {
-                    correctLettersNotInPlace[letters[i]] = 1;
-                } else {
-                    correctLettersNotInPlace[letters[i]]++;
+                if (!correctLettersNotInPlace[letters[i]] && !alreadyHighlighted.includes(letters[i])) {
+                    correctLettersNotInPlace[letters[i]] = true;
+                    grid[row].boxes[i].classList.add("close");
                 }
-                grid[row].boxes[i].classList.add("close");
             }
         }
     }
 }
+
 
 
