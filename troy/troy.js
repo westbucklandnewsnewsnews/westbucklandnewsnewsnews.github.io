@@ -138,6 +138,7 @@ document.addEventListener('keydown', function(event) {
             letters.pop()
         }
         else if (isEnter){
+            console.log("ent")
             if (boxN == word.len){
             checkBoxes()
             row++
