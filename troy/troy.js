@@ -166,7 +166,7 @@ function checkBoxes() {
     for (let i = 0; i < word.word.length; i++) {
         const targetLetter = word.word[i];
         if (letters[i] !== targetLetter) {
-            if (targetLetter in word.word) {
+            if ( word.word.includes(targetLetter)) {
                 if (!correctLettersNotInPlace[targetLetter]) {
                     correctLettersNotInPlace[targetLetter] = 1;
                 } else {
