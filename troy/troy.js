@@ -119,7 +119,6 @@ async function getGoing() {
 
 
 document.addEventListener('keydown', function(event) {
-    if (boxN < word.len){
         const char = event.key;
         const isAlphanumeric = /^[a-zA-Z0-9]$/.test(char);
         const isSpace = char === ' ';
@@ -128,9 +127,11 @@ document.addEventListener('keydown', function(event) {
         const isBackspace = event.key == 'Backspace'
         const isEnter = event.key == "Enter"
         if (isAlphanumeric || isSpace || isDash || isApos) {
+            if (boxN < word.len){
             grid[row].boxes[boxN].textContent = char
             boxN++
             letters.push(char)
+            }
         }
         else if (isBackspace){
             boxN-= 1
@@ -143,7 +144,6 @@ document.addEventListener('keydown', function(event) {
             checkBoxes()
             row++
         }}
-}
 });
 
 function checkBoxes() {
