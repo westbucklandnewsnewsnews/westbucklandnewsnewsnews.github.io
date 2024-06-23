@@ -94,3 +94,14 @@ function getGoing(){
     console.log(word)
 
 }
+
+document.addEventListener('keydown', function(event) {
+    const char = event.key;
+    const isAlphanumeric = /^[a-zA-Z0-9]$/.test(char);
+    const isSpace = char === ' ';
+    const isDash = char === '-';
+    const isApos = char === "'"
+    if (isAlphanumeric || isSpace || isDash || isApos) {
+        console.log(char);
+    }
+});
