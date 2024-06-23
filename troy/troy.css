@@ -94,20 +94,20 @@ button {
 
 @keyframes bounce {
     0% {
-      transform: translateY(0);
+      transform: translateY(0) rotate(0deg);
     }
     50% {
-      transform: translateY(-100px);
+      transform: translateY(-100px) rotate(0deg);
     }
     100% {
-      transform: translateY(0);
+      transform: translateY(0) rotate(360deg);
     }
   }
 
   .confetti {
     position: absolute;
-    width: 10px;
-    height: 20px;
+    width: 20px;
+    height: 10px;
     background-color: #f00;
     animation: float 4s ease-in-out infinite, bounce 1s ease-in-out infinite;
     z-index: 1000;
@@ -116,10 +116,8 @@ button {
   @keyframes float {
     0% {
       transform: translateY(0);
-      opacity: 1;
     }
     100% {
       transform: translateY(-500px);
-      opacity: 0;
     }
   }
