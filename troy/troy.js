@@ -199,8 +199,8 @@ function startConfetti(duration) {
         confetti.className = 'confetti';
         confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
         confetti.style.left = Math.random() * 100 + 'vw';
-        confetti.style.top = Math.random() * 100 + 'vw';
         confetti.style.animationDelay = Math.random() * 5 + 's';
+        confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
         confettiContainer.appendChild(confetti);
     }
 
@@ -209,7 +209,6 @@ function startConfetti(duration) {
     }, duration);
 }
 
-startConfetti(10000); // Run for 10 seconds
 
   
   

@@ -91,6 +91,7 @@ button {
     background-color: #687568;
     transform: scale(1.1);
 }
+
 #confetti-container {
     position: fixed;
     top: 0;
@@ -108,15 +109,24 @@ button {
     height: 10px;
     opacity: 0.7;
     border-radius: 50%;
-    animation: floatUp 5s linear infinite, wobble 1.5s ease-in-out infinite;
+    animation: floatUpDown 5s ease-in-out infinite, wobble 1.5s ease-in-out infinite;
 }
 
-@keyframes floatUp {
+@keyframes floatUpDown {
     0% {
-        transform: translateY(100vh);
+        transform: translateY(100vh) translateX(0);
+    }
+    25% {
+        transform: translateY(50vh) translateX(calc(50vw - 100%));
+    }
+    50% {
+        transform: translateY(-10vh) translateX(0);
+    }
+    75% {
+        transform: translateY(50vh) translateX(calc(-50vw + 100%));
     }
     100% {
-        transform: translateY(-10vh);
+        transform: translateY(100vh) translateX(0);
     }
 }
 
