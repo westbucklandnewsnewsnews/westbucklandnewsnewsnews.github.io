@@ -105,7 +105,7 @@ async function getGoing() {
     try {
         word = await parseWord(difficulty);
         if (word) {
-            grid = createGrid(word.len, 8 - difficulty);
+            grid = createGrid(word.len, 4 * difficulty);
             boxN = 0
             row = 0
         } else {
@@ -128,9 +128,9 @@ document.addEventListener('keydown', function(event) {
         const isEnter = event.key == "Enter"
         if (isAlphanumeric || isSpace || isDash || isApos) {
             if (boxN < word.len){
-            grid[row].boxes[boxN].textContent = char
+            grid[row].boxes[boxN].textContent = char.toLowerCase()
             boxN++
-            letters.push(char)
+            letters.push(char.toLowerCase())
             }
         }
         else if (isBackspace){
