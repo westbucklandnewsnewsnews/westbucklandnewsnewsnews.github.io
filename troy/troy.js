@@ -143,6 +143,8 @@ document.addEventListener('keydown', function(event) {
             if (boxN == word.len){
             checkBoxes()
             row++
+            letters = []
+            boxN = 0
         }}
 });
 
