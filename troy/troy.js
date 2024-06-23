@@ -59,7 +59,7 @@ async function getRandomWord() {
         }
     } catch (error) {
         console.error('Error getting random word:', error);
-        return null; // or return a default object { word: '', len: 0 }
+        return null; 
     }
 }
 
@@ -67,7 +67,7 @@ function parseWord(){
     j = {word:"", len:""}
     getRandomWord().then(result => {
         if (result) {
-            console.log(`Random word: ${result.word}, Length: ${result.len}`);
+            //console.log(`Random word: ${result.word}, Length: ${result.len}`);
             j.word = result.word;
             j.len = result.len;
         }
