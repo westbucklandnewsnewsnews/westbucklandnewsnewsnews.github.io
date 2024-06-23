@@ -54,13 +54,14 @@ async function getRandomWordFromFile(fileUrl) {
 
 async function getRandomWord(diff = null) {
     try {
-        happy = false
-        while (!happy){
-            randomFileUrl = getRandomElement(paths);
-            happy = true
-            if (diff == 3){
-                randomFileUrl = String(getRandomElement([13, 14, 15, 16, 17, 18, 19, 20, 21, 22])) + "long.txt"
-            }
+        if (diff == 3){
+            randomFileUrl = String(getRandomElement([13, 14, 15, 16, 17, 18, 19, 20, 21, 22])) + "long.txt"
+        }
+        if (diff == 2){
+            randomFileUrl = String(getRandomElement([5,6,7,8,9,10,11,12])) + "long.txt"
+        }
+        if (diff == 1){
+            randomFileUrl = String(getRandomElement([1,2,3,4])) + "long.txt"
         }
         randomWord = await getRandomWordFromFile(randomFileUrl);
         if (randomWord) {
@@ -87,13 +88,7 @@ function parseWord(diff = null){
 }
 
 function getGoing(){
-    happy = false
-    while (!happy){
-        word = parseWord(difficulty)
-        if (word.len <= diffs[difficulty-1]){
-            happy = true
-        }
-    }
+    word = parseWord(difficulty)
     createGrid(word.len, 8 - difficulty)
     console.log(word)
 
