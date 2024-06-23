@@ -48,18 +48,17 @@ async function getRandomWordFromFile(fileUrl) {
     }
 }
 
-function getRandomWord() {
+async function getRandomWord() {
     try {
         const randomFileUrl = getRandomElement(paths);
-        randomWord = getRandomWordFromFile("https://westbucklandnewsnewsnews.github.io/troy/"+randomFileUrl);
-        randomWord.then(result => {
-            randomWord = result
-        }).catch(error => {
-            console.error(error);
-        });
-        console.log(`Random word: ${randomWord}`);
-        return {word:randomWord, len:randomWord.length}
+        const randomWord = await getRandomWordFromFile(randomFileUrl);
+        if (randomWord) {
+            return { word: randomWord, len: randomWord.length };
+        } else {
+            throw new Error('Failed to generate a random word');
+        }
     } catch (error) {
         console.error('Error getting random word:', error);
+        return null; // or return a default object { word: '', len: 0 }
     }
 }
