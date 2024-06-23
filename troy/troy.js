@@ -160,6 +160,7 @@ function checkBoxes() {
 
     // First pass: Mark correct letters in the right place
     for (let i = 0; i < word.word.length; i++) {
+        grid[row].boxes[i].classList.add("checked");
         const targetLetter = word.word[i];
         if (letters[i] === targetLetter) {
             grid[row].boxes[i].classList.add("yes");

@@ -74,11 +74,17 @@ button {
     font-weight: bold;
     line-height: 1.5;
 }
+.checked{
+    background-color: #686462;
+    transition:all 0.4s;
+}
 .yes{
     background-color: #00b100;
+    transition:all 0.4s;
 }
 .close{
     background-color: #e26f11;
+    transition:all 0.4s;
 }
 
 .box:hover {
