@@ -62,3 +62,14 @@ async function getRandomWord() {
         return null; // or return a default object { word: '', len: 0 }
     }
 }
+
+function parseWord(){
+    j = {word:"", len:""}
+    getRandomWord().then(result => {
+        if (result) {
+            console.log(`Random word: ${result.word}, Length: ${result.len}`);
+            j.word = result.word;
+            j.len = result.len;
+        }
+    });
+}
