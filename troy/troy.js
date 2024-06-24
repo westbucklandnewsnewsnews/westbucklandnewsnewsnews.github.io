@@ -107,7 +107,7 @@ async function getGoing() {
     try {
         word = await parseWord(difficulty);
         if (word) {
-            grid = createGrid(word.len, 4 * difficulty);
+            grid = createGrid(word.len, 5 * difficulty);
             boxN = 0
             row = 0
         } else {
@@ -143,6 +143,7 @@ document.addEventListener('keydown', function(event) {
         }
         else if (isEnter){
             if (boxN == word.len){
+            row++
             if (checkBoxes() == word.len){
                 jsConfetti.addConfetti()
                 jsConfetti.addConfetti({emojis: ['🌈', '⚡️', '💥', '✨', '💫', '🌸'],})
@@ -154,14 +155,13 @@ document.addEventListener('keydown', function(event) {
                 createGrid(0)
                 document.getElementById("buttons").style.display = "flex"
             }
-            if (row == 4*difficulty){
+            if (row == (5*difficulty)){
                 createGrid(0)
                 document.getElementById("buttons").style.display = "flex"
                 row = 0
                 boxN = 0
                 grid = {}
             }
-              row++
             letters = []
             boxN = 0
         }}
