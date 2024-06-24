@@ -13,7 +13,7 @@ font-family: Segoe UI;
   justify-content: center;
 }
 
-.article {
+.farticle {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,23 +27,23 @@ font-family: Segoe UI;
   transition: transform 0.2s;
 }
 
-.article img {
+.farticle img {
   max-width: 100%;
   height: auto;
   border-radius: 5px;
 }
 
-.article h2.header2 {
+.farticle h2.header2 {
   font-size: 1.5em;
   margin: 10px 0;
 }
 
-.article p {
+.farticle p {
   font-size: 1em;
   color: #555;
 }
 
-.article:hover {
+.farticle:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
