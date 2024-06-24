@@ -79,11 +79,11 @@ button {
     transition:all 0.4s;
 }
 .yes{
-    background-color: #00b100;
+    background-color: #e26f11;
     transition:all 0.4s;
 }
 .close{
-    background-color: #e26f11;
+    background-color: #00b100;
     transition:all 0.4s;
 }
 
