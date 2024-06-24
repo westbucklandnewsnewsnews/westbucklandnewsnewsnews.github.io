@@ -29,18 +29,18 @@ font-family: Segoe UI;
 }
 
 .farticle img {
-  max-width: 400px;
+  max-width: 60%;
   height: auto;
   border-radius: 5px;
 }
 
 .farticle h2.header2 {
-  font-size: 1.5em;
+  font-size: 2.5em;
   margin: 10px 0;
 }
 
 .farticle p {
-  font-size: 1em;
+  font-size: 1.5em;
   color: #555;
 }
 
