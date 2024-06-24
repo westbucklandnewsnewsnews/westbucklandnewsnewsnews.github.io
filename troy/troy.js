@@ -161,6 +161,7 @@ document.addEventListener('keydown', function(event) {
                 row = -1
                 boxN = 0
                 grid = {}
+                alert("the word was "+word.word)
             }
             row++
             letters = []
