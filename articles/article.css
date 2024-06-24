@@ -23,3 +23,9 @@
     line-height: 1.6;
     margin-bottom: 20px;
 }
+
+#article-image{
+    position: absolute;
+    right:50%;
+    width:400px
+}
