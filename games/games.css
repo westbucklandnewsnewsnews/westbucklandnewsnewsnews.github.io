@@ -33,6 +33,7 @@
   .game p {
     margin: 10px;
     font-size: 1.2em;
+    min-height:80px;
   }
   
   .game:hover {
