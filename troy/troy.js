@@ -169,7 +169,7 @@ document.addEventListener('keydown', function(event) {
     });
 
 function checkBoxes() {
-    if (row != (difficulty*5)){
+    if (row != (difficulty*5)-1){
     let correctLettersInPlace = {};
     let correctLettersNotInPlace = {};
     let alreadyHighlighted = [];
