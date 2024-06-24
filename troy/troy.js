@@ -27,7 +27,7 @@ mediumButton.onclick  = () => {clearButtons();difficulty = 2;getGoing();}
 hardButton.onclick  = () => {clearButtons();difficulty = 3;getGoing();}
 
 function createGrid(cols, rows = 5) {
-    const g = []; // Initialize an array to hold rows
+    const g = [];
 
     const container = document.getElementById('grid-container');
     container.innerHTML = '';
@@ -121,6 +121,7 @@ async function getGoing() {
 
 
 document.addEventListener('keydown', function(event) {
+
         const char = event.key;
         const isAlphanumeric = /^[a-zA-Z0-9]$/.test(char);
         const isSpace = char === ' ';
@@ -143,7 +144,6 @@ document.addEventListener('keydown', function(event) {
         }
         else if (isEnter){
             if (boxN == word.len){
-            row++
             if (checkBoxes() == word.len){
                 jsConfetti.addConfetti()
                 jsConfetti.addConfetti({emojis: ['🌈', '⚡️', '💥', '✨', '💫', '🌸'],})
@@ -158,22 +158,23 @@ document.addEventListener('keydown', function(event) {
             if (row == (5*difficulty)){
                 createGrid(0)
                 document.getElementById("buttons").style.display = "flex"
-                row = 0
+                row = -1
                 boxN = 0
                 grid = {}
             }
+            row++
             letters = []
             boxN = 0
         }}
-});
+    });
 
 function checkBoxes() {
+    if (row != (difficulty*5)){
     let correctLettersInPlace = {};
     let correctLettersNotInPlace = {};
     let alreadyHighlighted = [];
     let correctCount = 0;
 
-    // Clear previous marks
     for (let box of grid[row].boxes) {
         box.classList.remove("yes", "close");
     }
@@ -203,7 +204,7 @@ function checkBoxes() {
     }
 
     return correctCount;
-}
+}}
 
 function startConfetti(duration) {
     const confettiContainer = document.createElement('div');
