@@ -192,7 +192,7 @@ function FE(k){
     save = FE(save);
     console.log(save)
     //console.log(save);
-    mungos = Number(atob(save["a"][1]));
+    mungos = Number((save["a"][1]));
     mungapples = Number(save["a"][2]);
     minimungomungos = Number((save["a"][3]));
     minimungos = Number((save["a"][4]));
