@@ -1,0 +1,44 @@
+    #yes, #no {
+        background-color: #4CAF50; /* Green background */
+        border: none; /* Remove border */
+        color: white; /* White text */
+        padding: 15px 32px; /* Padding */
+        text-align: center; /* Centered text */
+        text-decoration: none; /* Remove underline */
+        display: inline-block; /* Display as inline-block */
+        font-size: 16px; /* Font size */
+        margin: 4px 2px; /* Margin */
+        cursor: pointer; /* Pointer/hand icon */
+        border-radius: 12px; /* Rounded corners */
+        transition: background-color 0.3s; /* Transition effect for background color */
+    }
+
+    #no {
+        background-color: #f44336; /* Red background */
+    }
+
+    #yes:hover {
+        background-color: #45a049; /* Darker green on hover */
+    }
+
+    #no:hover {
+        background-color: #d32f2f; /* Darker red on hover */
+    }
+
+    #progressBar {
+        width: 100%;
+        background-color: #ddd; /* Light grey background */
+        border-radius: 5px; /* Rounded corners */
+        overflow: hidden; /* Prevents overflow */
+        margin-top: 20px;
+    }
+
+    #progressBar div {
+        width: 0%; /* Initial width set to 0% */
+        height: 30px; /* Height of the progress bar */
+        background-color: #4CAF50; /* Green background */
+        text-align: center; /* Centered text */
+        line-height: 30px; /* Centered text vertically */
+        color: white; /* White text */
+        border-radius: 5px 0 0 5px; /* Rounded corners on the left side */
+    }
