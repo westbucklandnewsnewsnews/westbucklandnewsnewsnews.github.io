@@ -144,7 +144,9 @@ document.addEventListener('keydown', function(event) {
         }
         else if (isEnter){
             if (boxN == word.len){
+                won = false
             if (checkBoxes() == word.len){
+                won = true
                 jsConfetti.addConfetti()
                 jsConfetti.addConfetti({emojis: ['🌈', '⚡️', '💥', '✨', '💫', '🌸'],})
                 jsConfetti.addConfetti({
@@ -155,7 +157,7 @@ document.addEventListener('keydown', function(event) {
                 createGrid(0)
                 document.getElementById("buttons").style.display = "flex"
             }
-            if (row == (5*difficulty)-1){
+            if ((row == (5*difficulty)-1)&&!won){
                 createGrid(0)
                 document.getElementById("buttons").style.display = "flex"
                 row = -1
