@@ -2,8 +2,8 @@
   up = 0
   ohBabes = CryptoJS.AES.encrypt("now that's mungoTastic", "what the mungo?!");
   alert("mungo clicker is testing new features right now, please report any issues to me please thanks")
-  k = true
-  while (k == true){if (prompt("game is broken rn might fix later yeah thanks") == "dev"){k = false}}
+  k = false
+  while (k){if (prompt("game is broken rn might fix later yeah thanks") == "dev"){k = false}}
   inved = false
   
   bank = document.getElementById("bank");
