@@ -113,6 +113,8 @@ font-family: Segoe UI;
   .article p {
     margin: 10px;
     font-size: 1.2em;
+    max-height:75px;
+    min-height:75px;
   }
   
   .article:hover {
