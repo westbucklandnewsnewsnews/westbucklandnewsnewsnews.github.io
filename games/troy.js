@@ -157,7 +157,7 @@ document.addEventListener('keydown', function(event) {
                 createGrid(0)
                 document.getElementById("buttons").style.display = "flex"
             }
-            if ((row == (5*difficulty)-1)&&!won){
+            else if ((row == (5*difficulty)-1)&&!won){
                 createGrid(0)
                 document.getElementById("buttons").style.display = "flex"
                 row = -1
